@@ -11,17 +11,13 @@ struct HashPair {
     uint64 seed;
 };
 
-
-
 template<typename T>
 class BloomFilter 
 {
 public:
 
-    explicit BloomFilter(const std::vector<HashPair> & hashSet) : // = defaultHashSet) :
+    explicit BloomFilter(const std::vector<HashPair> & hashSet) :
         hashSet(hashSet) {
-        //uint64 CityHash64()
-        //uint64 CityHash64WithSeed(const char *s, size_t len, uint64 seed)
     }
 
 private:
