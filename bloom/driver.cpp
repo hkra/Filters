@@ -41,11 +41,10 @@ void populate_filter(istream & in, BloomFilter & filter) {
 
 int main(int argc, char * argv[])
 {
-    size_t opt;
     po::options_description desc("Allowed options");
     desc.add_options()
         ("input-file", po::value<string>(), "input file")
-        ("size,s",   po::value<size_t>(&opt)->default_value(DEFAULT_FILTER_SIZE), "Set filter size (in bits)")
+        ("size,s",   po::value<size_t>()->default_value(DEFAULT_FILTER_SIZE), "Set filter size (in bits)")
         ("help",      "Print help message");
 
     auto argVars = std::unique_ptr<po::variables_map>(ParseProgramArgs(argc, argv, desc));
